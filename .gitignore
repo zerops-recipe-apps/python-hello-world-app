@@ -1,0 +1,12 @@
+# Vendor directory — populated by pip install --target=./vendor
+# during the Zerops build phase; not committed to source control
+vendor/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor and OS artifacts
+.DS_Store
+*.swp
