@@ -88,10 +88,6 @@ zerops:
 
     run:
       base: python@3.11
-      # Ubuntu provides apt-get, curl, and a richer SSH toolset.
-      # Alpine (the default) is sufficient for production but limiting
-      # for interactive development.
-      os: ubuntu
 
       # Migration runs on deploy — database is ready when developer
       # SSHs in, no manual setup needed.
