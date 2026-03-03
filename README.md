@@ -1,3 +1,27 @@
+# Python Hello World Recipe App
+
+<!-- #ZEROPS_EXTRACT_START:intro# -->
+A minimal [Python](https://python.org) application built with Flask and served
+by Gunicorn, connecting to a PostgreSQL database. Demonstrates the full
+Zerops build pipeline: vendored dependencies, idempotent migrations, and
+a production-ready WSGI setup in a single repository.
+Used within [Python Hello World recipe](https://app.zerops.io/recipes/python-hello-world) for [Zerops](https://zerops.io) platform.
+<!-- #ZEROPS_EXTRACT_END:intro# -->
+
+⬇️ **Full recipe page and deploy with one-click**
+
+[![Deploy on Zerops](https://github.com/zeropsio/recipe-shared-assets/blob/main/deploy-button/light/deploy-button.svg)](https://app.zerops.io/recipes/python-hello-world?environment=small-production)
+
+![python cover](https://github.com/zeropsio/recipe-shared-assets/blob/main/covers/svg/cover-python.svg)
+
+## Integration Guide
+
+<!-- #ZEROPS_EXTRACT_START:integration-guide# -->
+
+### 1. Adding `zerops.yaml`
+The main application configuration file you place at the root of your repository, it tells Zerops how to build, deploy and run your application.
+
+```yaml
 zerops:
   # Production setup — install deps to ./vendor, compile nothing,
   # deploy minimal artifact. Flask + Gunicorn serve production traffic.
@@ -111,3 +135,5 @@ zerops:
       # Example: /var/www/vendor/bin/gunicorn --bind 0.0.0.0:8000
       #          --workers 2 src.app:app
       start: zsc noop --silent
+```
+<!-- #ZEROPS_EXTRACT_END:integration-guide# -->
