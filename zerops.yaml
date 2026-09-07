@@ -3,7 +3,7 @@ zerops:
   # deploy minimal artifact. Flask + Gunicorn serve production traffic.
   - setup: prod
     build:
-      base: python@3.11
+      base: python@3.12
 
       buildCommands:
         # Install all dependencies into ./vendor so they travel
@@ -32,7 +32,7 @@ zerops:
           path: /
 
     run:
-      base: python@3.11
+      base: python@3.12
 
       # Run DB migration once per deploy version. initCommands —
       # not buildCommands — ensures migration and code are deployed
@@ -70,7 +70,7 @@ zerops:
   # in place. Zerops prepares the workspace; the developer drives.
   - setup: dev
     build:
-      base: python@3.11
+      base: python@3.12
 
       buildCommands:
         # Same vendoring as prod — ./vendor ships with deployFiles: ./
@@ -87,7 +87,7 @@ zerops:
         - vendor
 
     run:
-      base: python@3.11
+      base: python@3.12
 
       # Migration runs on deploy — database is ready when developer
       # SSHs in, no manual setup needed.
